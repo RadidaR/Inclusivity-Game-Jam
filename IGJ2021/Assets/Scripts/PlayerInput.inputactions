@@ -1,0 +1,33 @@
+{
+    "name": "PlayerInput",
+    "maps": [
+        {
+            "name": "Game",
+            "id": "37b3b864-8e14-4691-aece-8ed3588899ae",
+            "actions": [
+                {
+                    "name": "Escape",
+                    "type": "Button",
+                    "id": "cffccf1c-7441-47da-93ea-55f31be78e71",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": ""
+                }
+            ],
+            "bindings": [
+                {
+                    "name": "",
+                    "id": "7fa19d6d-56da-4042-a444-870ccae7f495",
+                    "path": "<Keyboard>/escape",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "Escape",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                }
+            ]
+        }
+    ],
+    "controlSchemes": []
+}
