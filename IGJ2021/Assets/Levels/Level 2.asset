@@ -14,12 +14,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   level: 2
   points:
-  - {x: 3.51, y: 1.8, z: 0}
-  - {x: 10.74, y: 5.16, z: 0}
-  goldMoves: 11
-  silverMoves: 15
-  maxMoves: 20
-  currentRating: 1
+  - {x: 4.61, y: 12.309999, z: 0}
+  - {x: 10.73, y: 7.03, z: 0}
+  startPoint: {x: 6.5661273, y: 6.3105917}
+  goldMoves: 10
+  silverMoves: 12
+  maxMoves: 15
+  revealRate: 4
   bestRating: 3
-  bestMoves: 11
+  bestMoves: 10
   completed: 1

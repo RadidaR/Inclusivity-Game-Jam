@@ -23,6 +23,21 @@ public class NodeScript : MonoBehaviour
 
     public float gatherRadius;
 
+    private void OnValidate()
+    {
+        Collider2D[] nodes = Physics2D.OverlapCircleAll(transform.position, gatherRadius);
+        nearNodes = new NodeScript[nodes.Length];
+
+        if (nearNodes != null)
+        {
+            for (int i = 0; i < nearNodes.Length; i++)
+            {
+                nearNodes[i] = nodes[i].GetComponent<NodeScript>();
+            }
+        }
+
+        CheckNearNodes();
+    }
     private void Awake()
     {
         Collider2D[] nodes = Physics2D.OverlapCircleAll(transform.position, gatherRadius);
@@ -71,12 +86,18 @@ public class NodeScript : MonoBehaviour
 
     public void CheckNearNodes()
     {
-        activeNodesInReach.Clear();
-        foreach (NodeScript node in nearNodes)
+        if (nearNodes != null)
         {
-            if (node.isActive)
+            activeNodesInReach.Clear(); 
+            foreach (NodeScript node in nearNodes)
             {
-                activeNodesInReach.Add(node);
+                if (node.isActive)
+                {
+                    if (node != this)
+                    {
+                        activeNodesInReach.Add(node);
+                    }
+                }
             }
         }
     }
@@ -162,6 +183,18 @@ public class NodeScript : MonoBehaviour
         {
             Gizmos.color = Color.yellow;
             Gizmos.DrawWireSphere(transform.position, gatherRadius);
+        }
+    }
+
+    private void OnDrawGizmos()
+    {
+        if (nearNodes != null)
+        {
+            Gizmos.color = Color.white;
+            foreach (NodeScript node in nearNodes)
+            {
+                Gizmos.DrawLine(transform.position, node.gameObject.transform.position);
+            }
         }
     }
 }

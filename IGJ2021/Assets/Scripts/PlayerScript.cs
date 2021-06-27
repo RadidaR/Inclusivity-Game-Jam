@@ -18,18 +18,33 @@ public class PlayerScript : MonoBehaviour
     public GameEvent eMoved;
     public GameEvent eShowPaths;
     public GameEvent eHidePaths;
+    public GameEvent eReset;
+    public GameEvent eRevealPressed;
 
     public GameObject highLighter;
     public LineRenderer lineRenderer;
+
+    bool coroutineRunning;
 
     private void Awake()
     {
         playerInput = new PlayerInput();
 
         playerInput.Game.MouseClick.performed += ctx => Clicked();
-        playerInput.Game.Space.performed += ctx => eShowPaths.Raise();
+        playerInput.Game.Space.performed += ctx => RevealPressed(); 
         playerInput.Game.Space.canceled += ctx => eHidePaths.Raise();
-    }
+
+        Collider2D node = Physics2D.OverlapCircle(transform.position, playerRadius);
+
+        if (node != null && node.gameObject.GetComponent<NodeScript>() != null)
+        {
+            //Debug.Log(node.gameObject.name);
+            currentNode = node.gameObject.GetComponent<NodeScript>();
+            //currentNode.isOccupied = true;
+            //currentNode.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.green;
+            //currentNode.ShowPaths();
+        }
+        }
 
     private void Update()
     {
@@ -45,8 +60,13 @@ public class PlayerScript : MonoBehaviour
             //Debug.Log(node.gameObject.name);
             currentNode = node.gameObject.GetComponent<NodeScript>();
             currentNode.isOccupied = true;
-            currentNode.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.green;
+            //currentNode.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.green;
             currentNode.ShowPaths();
+
+            if (currentNode.activeNodesInReach.Count == 0)
+            {
+                eReset.Raise();
+            }
         }
         else
         {
@@ -54,13 +74,15 @@ public class PlayerScript : MonoBehaviour
             {
                 currentNode.isOccupied = false;
                 currentNode.isActive = false;
-                currentNode.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.red;
+                Color alpha = gameData.inactiveNodeColor;
+                alpha.a = 1;
+                currentNode.gameObject.GetComponentInChildren<SpriteRenderer>().color = alpha;
                 currentNode.HidePaths();
                 currentNode = null;
             }
         }
 
-        Collider2D hoverOver = Physics2D.OverlapCircle(mousePosition, 0.65f);
+        Collider2D hoverOver = Physics2D.OverlapCircle(mousePosition, 0.2f);
 
         if (hoverOver != null)
         {
@@ -174,7 +196,7 @@ public class PlayerScript : MonoBehaviour
     {
         isMoving = true;
         Vector2 initialPosition = transform.position;
-        for (float i = 0; i <= 1; i += 0.02f)
+        for (float i = 0; i <= 1; i += 0.075f)
         {
             yield return new WaitForSeconds(0.00025f);
             Vector2 newPosition;
@@ -191,6 +213,50 @@ public class PlayerScript : MonoBehaviour
         }
         eMoved.Raise();
         isMoving = false;
+    }
+
+    public void IncreaseReveal()
+    {
+        gameData.currentReveal++;
+    }
+
+    public void RevealPressed()
+    {
+        GameManager gameManager = FindObjectOfType<GameManager>();
+        if (gameData.currentReveal >= gameManager.currentLevel.revealRate)
+        {
+            if (!coroutineRunning)
+            {
+                StartCoroutine(RevealPaths());
+                eRevealPressed.Raise();
+            }
+        }
+    }
+
+    IEnumerator RevealPaths()
+    {
+        coroutineRunning = true;
+        //for (float i = gameData.revealDuration; i > 0; i -= Time.deltaTime)
+        //{
+        //    yield return new WaitForSeconds(Time.deltaTime);
+        //    gameData.currentReveal -= Time.deltaTime;
+        //    eShowPaths.Raise();
+        //}
+
+        gameData.timer = gameData.revealDuration;
+
+        while (gameData.timer > 0)
+        {
+                yield return new WaitForSeconds(Time.deltaTime);
+                gameData.timer -= Time.deltaTime;
+                eShowPaths.Raise();
+                gameData.revealed = true;
+        }
+
+        gameData.currentReveal = 0;
+        eHidePaths.Raise();
+        gameData.revealed = false;
+        coroutineRunning = false;
     }
 
     private void OnEnable()

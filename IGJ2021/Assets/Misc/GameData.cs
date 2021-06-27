@@ -18,6 +18,15 @@ public class GameData : ScriptableObject, ISerializationCallbackReceiver
 
     public int currentLevel;
     public int currentMoves;
+    public int currentRating;
+    public float currentReveal;
+
+    public float timer;
+    public float revealDuration;
+    public bool revealed;
+
+    public string tutorialText1;
+    public string tutorialText2;
 
     public void OnBeforeSerialize()
     {
@@ -27,5 +36,6 @@ public class GameData : ScriptableObject, ISerializationCallbackReceiver
     public void OnAfterDeserialize()
     {
         currentMoves = 0;
+        currentRating = 0;
     }
 }

@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3612cdbed48b18f499f32fa4ab8384c0, type: 3}
+  m_Name: Level 3
+  m_EditorClassIdentifier: 
+  level: 3
+  points:
+  - {x: 9.08, y: 3.05, z: 0}
+  - {x: 4.07, y: -2.87, z: 0}
+  - {x: 4.72, y: 7.07, z: 0}
+  startPoint: {x: 2.8561273, y: 3.2005918}
+  goldMoves: 17
+  silverMoves: 20
+  maxMoves: 25
+  revealRate: 4
+  bestRating: 3
+  bestMoves: 17
+  completed: 1

@@ -1,0 +1,742 @@
+fileFormatVersion: 2
+guid: 2d7f6cb211949df4dad7ae92e3fc07e4
+ScriptedImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 2
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
+  script: {fileID: 11500000, guid: b2a9591990af98743ba3ff7cf1000886, type: 3}
+  textureImporterSettings:
+    alphaSource: 1
+    mipMapMode: 0
+    enableMipMap: 1
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+    convertToNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    isReadable: 0
+    streamingMipmaps: 1
+    streamingMipmapsPriority: 0
+    vTOnly: 0
+    nPOTScale: 1
+    sRGBTexture: 1
+    spriteMode: 2
+    spriteExtrude: 1
+    spriteMeshType: 1
+    alignment: 0
+    spritePivot: {x: 0.5, y: 0.5}
+    spritePixelsToUnits: 100
+    spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+    spriteGenerateFallbackPhysicsShape: 0
+    generateCubemap: 6
+    cubemapConvolution: 0
+    seamlessCubemap: 0
+    alphaIsTransparency: 1
+    spriteTessellationDetail: -1
+    textureType: 8
+    textureShape: 1
+    singleChannelComponent: 0
+    flipbookRows: 0
+    flipbookColumns: 0
+    ignorePngGamma: 0
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 0
+    wrapV: 0
+    wrapW: 0
+    normalMap: 0
+    textureFormat: 0
+    maxTextureSize: 0
+    lightmap: 0
+    compressionQuality: 0
+    linearTexture: 0
+    grayScaleToAlpha: 0
+    rGBM: 0
+    cubemapConvolutionSteps: 0
+    cubemapConvolutionExponent: 0
+    maxTextureSizeSet: 0
+    compressionQualitySet: 0
+    textureFormatSet: 0
+    applyGammaDecoding: 0
+  spriteImportData:
+  - name: 
+    originalName: 
+    pivot: {x: 0, y: 0}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    spriteID: 
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 0, y: 0}
+  mosaicSpriteImportData: []
+  rigSpriteImportData:
+  - name: Upper part of lamp
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3612
+      y: 3664
+      width: 371
+      height: 263
+    spriteID: 068bb295bd372ad4ca00727da06f523b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 3410, y: 2449}
+  - name: Lamp
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2299
+      y: 2467
+      width: 242
+      height: 1053
+    spriteID: 9aecfe9f654479c4086b0932fc43ea55
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2005, y: 2164}
+  - name: Player_tummy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2299
+      y: 2057
+      width: 1429
+      height: 402
+    spriteID: 1b5d8403e52a0e348b6a511936f1ce82
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1163, y: 2057}
+  - name: Player_jeans
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3011
+      y: 4218
+      width: 760
+      height: 376
+    spriteID: 38107ae55bbc5584598caf7dfc274eb5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1492, y: 4000}
+  - name: Player_Right foot
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3865
+      y: 3935
+      width: 173
+      height: 237
+    spriteID: 33c3ff83d280abb4f8c287fdd45cf0f2
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1989, y: 3369}
+  - name: Player_left foot
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3612
+      y: 3935
+      width: 245
+      height: 212
+    spriteID: 2194a10fa8189c0429b4427a7a4d8585
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1812, y: 3392}
+  - name: Player_couch
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 3664
+      width: 2486
+      height: 1070
+    spriteID: 31aecd2ce41c49842adabc6fef0e0171
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -1102, y: 3664}
+  - name: Psycho_glasses
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3736
+      y: 2399
+      width: 186
+      height: 58
+    spriteID: e524b4c16608480459713ba11829ace7
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2813, y: 1048}
+  - name: Psycho_eyepupil
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3865
+      y: 4180
+      width: 108
+      height: 23
+    spriteID: 7ffa9dbc4e001cf4ebbc28966bf907a8
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2893, y: 2783}
+  - name: Psycho_eyeball
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3956
+      y: 2057
+      width: 133
+      height: 85
+    spriteID: 032882cefd3ce89468c0269c10af20b1
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2997, y: 691}
+  - name: Psycho_eyelids
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2299
+      y: 3528
+      width: 142
+      height: 114
+    spriteID: 1441d2a7c1c7e8f468091e8ac951e09f
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1344, y: 2159}
+  - name: Psycho_face
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3736
+      y: 2057
+      width: 212
+      height: 334
+    spriteID: b13407d07b85a5844b036f1f6908d838
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2830, y: 816}
+  - name: Psycho_jacket Copy
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3779
+      y: 4218
+      width: 239
+      height: 149
+    spriteID: da232255a02382847ba34fc930848a7b
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2983, y: 3308}
+  - name: Writing hand
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2782
+      y: 4596
+      width: 158
+      height: 127
+    spriteID: f9e825ffb2531cd408c675ae31f8c654
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1788, y: 3629}
+  - name: Non writing hand
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2498
+      y: 4596
+      width: 276
+      height: 112
+    spriteID: 09fcce44f6f667e4c8def24bb1eb1ea6
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1499, y: 3700}
+  - name: Psycho_jacket
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3011
+      y: 3664
+      width: 593
+      height: 546
+    spriteID: 668c1f3530c13504ca368f649b528959
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2319, y: 2917}
+  - name: Psycho_jeans
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2498
+      y: 3664
+      width: 505
+      height: 714
+    spriteID: 344e605a359761a4f922d028bb710dd5
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 1728, y: 3528}
+  - name: Psycho_chair
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 3604
+      y: 4
+      width: 424
+      height: 1056
+    spriteID: 3e9247e5a4031aa4291bfbedd3ed9a46
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2829, y: -268}
+  - name: Environment
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 2057
+      width: 2287
+      height: 1599
+    spriteID: 5f1272d8fdf69114bb6f70ba01cce1ce
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: -290, y: 1733}
+  - name: Window_Sky
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 2498
+      y: 4386
+      width: 485
+      height: 202
+    spriteID: 72dcf735e8d516247af44cd20666f0ba
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 2190, y: 2678}
+  - name: Background
+    originalName: 
+    pivot: {x: 0.5, y: 0.5}
+    alignment: 0
+    border: {x: 0, y: 0, z: 0, w: 0}
+    rect:
+      serializedVersion: 2
+      x: 4
+      y: 4
+      width: 3592
+      height: 2045
+    spriteID: d2ab18cf21f56d74ab8b80dad508e414
+    internalID: 0
+    spriteBone: []
+    spriteOutline: []
+    vertices: []
+    spritePhysicsOutline: []
+    indices: 
+    edges: []
+    tessellationDetail: 0
+    parentGroupIndex: -1
+    uvTransform: {x: 4, y: 4}
+  characterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  sharedRigSpriteImportData: []
+  sharedRigCharacterData:
+    bones: []
+    parts: []
+    dimension: {x: 0, y: 0}
+    characterGroups: []
+    boneReadOnly: 0
+  platformSettings: []
+  mosaicLayers: 1
+  characterMode: 1
+  documentPivot: {x: 0, y: 0}
+  documentAlignment: 7
+  importHiddenLayers: 0
+  importedTextureWidth: 1024
+  importedTextureHeight: 2048
+  documentSize: {x: 3592, y: 2045}
+  paperDollMode: 0
+  keepDupilcateSpriteName: 1
+  skeletonAssetReferenceID: 
+  spriteCategoryList:
+    categories: []
+  textureActualWidth: 4096
+  textureActualHeight: 8192
+  spritePackingTag: 
+  resliceFromLayer: 0
+  mosaicPSDLayers: []
+  rigPSDLayers:
+  - name: Upper part of lamp
+    spriteName: Upper part of lamp
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 068bb295bd372ad4ca00727da06f523b
+    layerID: -1939269154
+    mosaicPosition: {x: 3612, y: 3664}
+  - name: Lamp
+    spriteName: Lamp
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 9aecfe9f654479c4086b0932fc43ea55
+    layerID: 2019043816
+    mosaicPosition: {x: 2299, y: 2467}
+  - name: Player_tummy
+    spriteName: Player_tummy
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1b5d8403e52a0e348b6a511936f1ce82
+    layerID: -1229465664
+    mosaicPosition: {x: 2299, y: 2057}
+  - name: Player_jeans
+    spriteName: Player_jeans
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 38107ae55bbc5584598caf7dfc274eb5
+    layerID: -2124597081
+    mosaicPosition: {x: 3011, y: 4218}
+  - name: Player_Right foot
+    spriteName: Player_Right foot
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 33c3ff83d280abb4f8c287fdd45cf0f2
+    layerID: -1590601434
+    mosaicPosition: {x: 3865, y: 3935}
+  - name: Player_left foot
+    spriteName: Player_left foot
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 2194a10fa8189c0429b4427a7a4d8585
+    layerID: -665826315
+    mosaicPosition: {x: 3612, y: 3935}
+  - name: Player_couch
+    spriteName: Player_couch
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 31aecd2ce41c49842adabc6fef0e0171
+    layerID: -891509394
+    mosaicPosition: {x: 4, y: 3664}
+  - name: Psycho_glasses
+    spriteName: Psycho_glasses
+    isGroup: 0
+    parentIndex: -1
+    spriteID: e524b4c16608480459713ba11829ace7
+    layerID: -1993352883
+    mosaicPosition: {x: 3736, y: 2399}
+  - name: Psycho_eyepupil
+    spriteName: Psycho_eyepupil
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 7ffa9dbc4e001cf4ebbc28966bf907a8
+    layerID: 1593488748
+    mosaicPosition: {x: 3865, y: 4180}
+  - name: Psycho_eyeball
+    spriteName: Psycho_eyeball
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 032882cefd3ce89468c0269c10af20b1
+    layerID: -545103041
+    mosaicPosition: {x: 3956, y: 2057}
+  - name: Psycho_eyelids
+    spriteName: Psycho_eyelids
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 1441d2a7c1c7e8f468091e8ac951e09f
+    layerID: 604142186
+    mosaicPosition: {x: 2299, y: 3528}
+  - name: Psycho_face
+    spriteName: Psycho_face
+    isGroup: 0
+    parentIndex: -1
+    spriteID: b13407d07b85a5844b036f1f6908d838
+    layerID: 325033050
+    mosaicPosition: {x: 3736, y: 2057}
+  - name: Psycho_jacket Copy
+    spriteName: Psycho_jacket Copy
+    isGroup: 0
+    parentIndex: -1
+    spriteID: da232255a02382847ba34fc930848a7b
+    layerID: -206646506
+    mosaicPosition: {x: 3779, y: 4218}
+  - name: Writing hand
+    spriteName: Writing hand
+    isGroup: 0
+    parentIndex: -1
+    spriteID: f9e825ffb2531cd408c675ae31f8c654
+    layerID: 1755672059
+    mosaicPosition: {x: 2782, y: 4596}
+  - name: Non writing hand
+    spriteName: Non writing hand
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 09fcce44f6f667e4c8def24bb1eb1ea6
+    layerID: 557009206
+    mosaicPosition: {x: 2498, y: 4596}
+  - name: Psycho_jacket
+    spriteName: Psycho_jacket
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 668c1f3530c13504ca368f649b528959
+    layerID: -1801099661
+    mosaicPosition: {x: 3011, y: 3664}
+  - name: Psycho_jeans
+    spriteName: Psycho_jeans
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 344e605a359761a4f922d028bb710dd5
+    layerID: 973256922
+    mosaicPosition: {x: 2498, y: 3664}
+  - name: Psycho_chair
+    spriteName: Psycho_chair
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 3e9247e5a4031aa4291bfbedd3ed9a46
+    layerID: -616578644
+    mosaicPosition: {x: 3604, y: 4}
+  - name: Environment
+    spriteName: Environment
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 5f1272d8fdf69114bb6f70ba01cce1ce
+    layerID: 270112577
+    mosaicPosition: {x: 4, y: 2057}
+  - name: Window_Sky
+    spriteName: Window_Sky
+    isGroup: 0
+    parentIndex: -1
+    spriteID: 72dcf735e8d516247af44cd20666f0ba
+    layerID: -2141363600
+    mosaicPosition: {x: 2498, y: 4386}
+  - name: Background
+    spriteName: Background
+    isGroup: 0
+    parentIndex: -1
+    spriteID: d2ab18cf21f56d74ab8b80dad508e414
+    layerID: 332801758
+    mosaicPosition: {x: 4, y: 4}
+  sharedRigPSDLayers: []
+  generateGOHierarchy: 0
+  textureAssetName: intro screen PSB Texture
+  prefabAssetName: intro screen PSB Prefab
+  spriteLibAssetName: intro screen PSB Sprite Lib
+  skeletonAssetName: intro screen PSB Skeleton
+  secondarySpriteTextures: []

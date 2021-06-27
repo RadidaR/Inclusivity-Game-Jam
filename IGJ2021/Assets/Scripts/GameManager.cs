@@ -10,10 +10,11 @@ public class GameManager : MonoBehaviour
 
     public LevelData currentLevel;
     public GameObject point;
+    public GameObject player;
 
     public List<Transform> currentPoints;
 
-    public int currentMoves = 0;
+    //public int currentMoves = 0;
     public GameEvent eReachedPoint;
     public GameEvent eReset;
     public GameEvent eLevelCompleted;
@@ -22,6 +23,8 @@ public class GameManager : MonoBehaviour
     void Awake()
     {
         gameData.currentMoves = 0;
+        gameData.timer = 0;
+        gameData.revealed = false;
 
         foreach (LevelData level in levels)
         {
@@ -36,12 +39,14 @@ public class GameManager : MonoBehaviour
             currentLevel = levels[levels.Length - 1];
         }
 
-        StartCoroutine(SetPoints());
+        gameData.currentReveal = currentLevel.revealRate;
+
+        player.transform.position = currentLevel.startPoint;
+        SetPoints();
     }
 
-    IEnumerator SetPoints()
+    void SetPoints()
     {
-        yield return new WaitForSeconds(0.5f);
         for (int i=0; i < currentLevel.points.Length; i++)
         {
             currentPoints.Add(Instantiate(point, currentLevel.points[i], Quaternion.identity).transform);
@@ -61,12 +66,12 @@ public class GameManager : MonoBehaviour
     {
         gameData.currentMoves++;
 
-        if (gameData.currentMoves > currentLevel.maxMoves)
+        if (gameData.currentMoves >= currentLevel.maxMoves)
         {
             eReset.Raise();
         }
 
-        currentMoves = gameData.currentMoves;
+        //currentMoves = gameData.currentMoves;
     }
 
     public void CheckIfReachedPoint()
@@ -93,7 +98,7 @@ public class GameManager : MonoBehaviour
         if (point == currentPoints[0])
         {
             eReachedPoint.Raise();
-            Destroy(point.gameObject, 1);
+            Destroy(point.gameObject);
             currentPoints.Remove(point);
 
             if (currentPoints.Count == 0)
@@ -113,21 +118,21 @@ public class GameManager : MonoBehaviour
 
         if (gameData.currentMoves <= currentLevel.goldMoves)
         {
-            currentLevel.currentRating = 3;
+            gameData.currentRating = 3;
         }
         else if(gameData.currentMoves <= currentLevel.silverMoves)
         {
-            currentLevel.currentRating = 2;
+            gameData.currentRating = 2;
         }
         else
         {
-            currentLevel.currentRating = 1;
+            gameData.currentRating = 1;
         }
 
         if (gameData.currentMoves <= currentLevel.bestMoves)
         {
             currentLevel.bestMoves = gameData.currentMoves;
-            currentLevel.bestRating = currentLevel.currentRating;
+            currentLevel.bestRating = gameData.currentRating;
             eNewHighScore.Raise();
         }
 

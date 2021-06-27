@@ -5,12 +5,14 @@ public class LevelData : ScriptableObject, ISerializationCallbackReceiver
 {
     public int level;
     public Vector3[] points;
+    public Vector2 startPoint;
 
     public int goldMoves;
     public int silverMoves;
     public int maxMoves;
 
-    public int currentRating;
+    public int revealRate;
+
     public int bestRating;
     public int bestMoves;
 

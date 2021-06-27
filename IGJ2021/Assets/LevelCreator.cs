@@ -5,7 +5,8 @@ using UnityEngine;
 public class LevelCreator : MonoBehaviour
 {
     public LevelData level;
-    public Vector3[] points; 
+    public Vector3[] points;
+    public Transform playerPosition;
 
     private void OnValidate()
     {
@@ -24,6 +25,8 @@ public class LevelCreator : MonoBehaviour
                 {
                     level.points[i] = points[i];
                 }
+
+                level.startPoint = playerPosition.position;
             }
             else
             {

@@ -12,18 +12,36 @@ public class CanvasScript : MonoBehaviour
     public TextMeshProUGUI movesText;
     public TextMeshProUGUI endMovesText;
     public TextMeshProUGUI bestMovesText;
+    public TextMeshProUGUI spaceBarText;
+    public TextMeshProUGUI tutorialText;
 
     public Image[] stars;
     public Image[] bestStars;
 
     public GameObject levelCompletedScreen;
+    public Slider revealSlider;
+    public float revealValue;
 
     private void Start()
     {
         gameData = GetComponent<GameManager>().gameData;
         currentLevel = GetComponent<GameManager>().currentLevel;
         UpdateMoves();
+        revealSlider.value = 0;
+        revealSlider.maxValue = currentLevel.revealRate;
+        UpdateMoves();
 
+        if (currentLevel.level == 0)
+        {
+            tutorialText.text = gameData.tutorialText1;
+            tutorialText.enabled = true;
+        }
+        else if (currentLevel.level == 1)
+        {
+            tutorialText.text = gameData.tutorialText2;
+            tutorialText.enabled = true;
+
+        }
     }
 
     //void SetLevel()
@@ -31,15 +49,45 @@ public class CanvasScript : MonoBehaviour
     //    currentLevel = GetComponent<GameManager>().currentLevel;
     //}
     // Update is called once per frame
+    private void Update()
+    {
+        //revealValue = gameData.currentReveal;
+        if (!gameData.revealed)
+        {
+            revealSlider.maxValue = currentLevel.revealRate;
+            revealSlider.value = gameData.currentReveal;
+        }
+        else
+        {
+            revealSlider.maxValue = gameData.revealDuration;
+            revealSlider.value = gameData.timer;
+        }
+
+        if (revealSlider.value == revealSlider.maxValue)
+        {
+            spaceBarText.enabled = true;
+        }
+        else
+        {
+            spaceBarText.enabled = false;
+        }
+    }
+
     public void UpdateMoves()
     {
-        movesText.text = $"Moves {gameData.currentMoves} / {currentLevel.maxMoves}";
+        movesText.text = $"{gameData.currentMoves} / {currentLevel.maxMoves}";
+    }
+
+    public void UpdateRevealSlider()
+    {
+        revealSlider.maxValue = gameData.revealDuration;
+        revealSlider.value = revealSlider.maxValue;
     }
 
     public void LevelCompleted()
     {
-        endMovesText.text = $" Moves: {gameData.currentMoves}";
-        int rating = currentLevel.currentRating;
+        endMovesText.text = $" {gameData.currentMoves} moves";
+        int rating = gameData.currentRating;
 
         for (int i = 0; i < rating; i++)
         {
@@ -67,7 +115,7 @@ public class CanvasScript : MonoBehaviour
 
     public void HighScore()
     {
-        bestMovesText.text = $" Best: {currentLevel.bestMoves}";
+        bestMovesText.text = $" Best: {currentLevel.bestMoves} moves";
 
         for (int i = 0; i < currentLevel.bestRating; i++)
         {
