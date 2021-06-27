@@ -26,14 +26,21 @@ public class PlayerScript : MonoBehaviour
 
     bool coroutineRunning;
 
+    int counter = 0;
+
     private void Awake()
     {
         playerInput = new PlayerInput();
 
         playerInput.Game.MouseClick.performed += ctx => Clicked();
-        playerInput.Game.Space.performed += ctx => RevealPressed(); 
+        playerInput.Game.Space.performed += ctx => RevealPressed();
         playerInput.Game.Space.canceled += ctx => eHidePaths.Raise();
 
+        
+    }
+
+    private void Start()
+    {
         Collider2D node = Physics2D.OverlapCircle(transform.position, playerRadius);
 
         if (node != null && node.gameObject.GetComponent<NodeScript>() != null)
@@ -44,7 +51,12 @@ public class PlayerScript : MonoBehaviour
             //currentNode.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.green;
             //currentNode.ShowPaths();
         }
+
+        if (currentNode != null)
+        {
+            transform.position = currentNode.gameObject.transform.position;
         }
+    }
 
     private void Update()
     {
@@ -63,10 +75,24 @@ public class PlayerScript : MonoBehaviour
             //currentNode.gameObject.GetComponentInChildren<SpriteRenderer>().color = Color.green;
             currentNode.ShowPaths();
 
-            if (currentNode.activeNodesInReach.Count == 0)
+            if (currentNode.activeNodesInReach.Count == 0 && counter == 0)
             {
+                counter++;
+                FindObjectOfType<AudioManagerScript>().PlaySound("ResetSound");
                 eReset.Raise();
             }
+
+            //if (currentNode != node.gameObject.GetComponent<NodeScript>())
+            //{
+            //    currentNode.isOccupied = false;
+            //    currentNode.isActive = false;
+            //    Color alpha = gameData.inactiveNodeColor;
+            //    alpha.a = 1;
+            //    currentNode.gameObject.GetComponentInChildren<SpriteRenderer>().color = alpha;
+            //    currentNode.HidePaths();
+            //    currentNode = node.gameObject.GetComponent<NodeScript>();
+
+            //}
         }
         else
         {
@@ -183,7 +209,11 @@ public class PlayerScript : MonoBehaviour
                     {
                         if (!isMoving)
                         {
-                            StartCoroutine(Move(clickedNode.gameObject.transform.position));
+                            GameManager gameManager = FindObjectOfType<GameManager>();
+                            if (gameData.currentMoves < gameManager.currentLevel.maxMoves)
+                            {
+                                StartCoroutine(Move(clickedNode.gameObject.transform.position));
+                            }
                         }
                     }
                 }
@@ -195,6 +225,7 @@ public class PlayerScript : MonoBehaviour
     IEnumerator Move(Vector2 location)
     {
         isMoving = true;
+        FindObjectOfType<AudioManagerScript>().PlaySound("MoveSound");
         Vector2 initialPosition = transform.position;
         for (float i = 0; i <= 1; i += 0.075f)
         {
@@ -244,7 +275,7 @@ public class PlayerScript : MonoBehaviour
         //}
 
         gameData.timer = gameData.revealDuration;
-
+        FindObjectOfType<AudioManagerScript>().PlaySound("TimerSound");
         while (gameData.timer > 0)
         {
                 yield return new WaitForSeconds(Time.deltaTime);
@@ -252,7 +283,7 @@ public class PlayerScript : MonoBehaviour
                 eShowPaths.Raise();
                 gameData.revealed = true;
         }
-
+        FindObjectOfType<AudioManagerScript>().StopSound("TimerSound");
         gameData.currentReveal = 0;
         eHidePaths.Raise();
         gameData.revealed = false;

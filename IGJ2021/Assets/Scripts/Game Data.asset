@@ -20,12 +20,12 @@ MonoBehaviour:
   goldStarsColor: {r: 1, g: 0.7938931, b: 0, a: 1}
   silverStarsColor: {r: 0.7264151, g: 0.7264151, b: 0.7264151, a: 1}
   bronzeStarsColor: {r: 0.8490566, g: 0.45597365, b: 0.1802243, a: 1}
-  currentLevel: 1
-  currentMoves: 7
-  currentRating: 3
-  currentReveal: 7
-  timer: 2.2499652
-  revealDuration: 5
-  revealed: 1
+  currentLevel: 2
+  currentMoves: 0
+  currentRating: 0
+  currentReveal: 5
+  timer: 0
+  revealDuration: 3
+  revealed: 0
   tutorialText1: Click on near dots to move to them.
   tutorialText2: You need to go through 1 before 2.

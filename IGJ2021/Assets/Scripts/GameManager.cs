@@ -20,6 +20,8 @@ public class GameManager : MonoBehaviour
     public GameEvent eLevelCompleted;
     public GameEvent eNewHighScore;
 
+    bool coroutineRunning = false;
+
     void Awake()
     {
         gameData.currentMoves = 0;
@@ -68,10 +70,26 @@ public class GameManager : MonoBehaviour
 
         if (gameData.currentMoves >= currentLevel.maxMoves)
         {
-            eReset.Raise();
+            if (!coroutineRunning)
+            {
+                StartCoroutine(NoMoreMoves());
+            }
         }
 
         //currentMoves = gameData.currentMoves;
+    }
+
+    IEnumerator NoMoreMoves()
+    {
+        coroutineRunning = true;
+        yield return new WaitForSeconds(0.5f);
+
+        if (currentPoints.Count > 0)
+        {
+            FindObjectOfType<AudioManagerScript>().PlaySound("ResetSound");
+            eReset.Raise();
+        }
+        coroutineRunning = false;
     }
 
     public void CheckIfReachedPoint()
@@ -97,17 +115,20 @@ public class GameManager : MonoBehaviour
     {
         if (point == currentPoints[0])
         {
+            FindObjectOfType<AudioManagerScript>().PlaySound("CheckpointSound");
             eReachedPoint.Raise();
             Destroy(point.gameObject);
             currentPoints.Remove(point);
 
             if (currentPoints.Count == 0)
             {
+
                 eLevelCompleted.Raise();
             }
         }
         else
         {
+            FindObjectOfType<AudioManagerScript>().PlaySound("ResetSound");
             eReset.Raise();
             //GameOver
         }
@@ -115,6 +136,8 @@ public class GameManager : MonoBehaviour
 
     public void LevelCompleted()
     {
+        FindObjectOfType<AudioManagerScript>().StopSound("TimerSound");
+        FindObjectOfType<AudioManagerScript>().PlaySound("WinSound");
 
         if (gameData.currentMoves <= currentLevel.goldMoves)
         {

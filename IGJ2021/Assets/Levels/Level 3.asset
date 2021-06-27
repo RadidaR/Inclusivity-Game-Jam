@@ -21,7 +21,7 @@ MonoBehaviour:
   goldMoves: 17
   silverMoves: 20
   maxMoves: 25
-  revealRate: 4
-  bestRating: 3
-  bestMoves: 17
-  completed: 1
+  revealRate: 7
+  bestRating: 0
+  bestMoves: 25
+  completed: 0

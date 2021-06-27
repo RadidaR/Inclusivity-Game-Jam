@@ -320,7 +320,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gameData: {fileID: 11400000, guid: 6ba85d14c867d5347bc41b3aed5f14b3, type: 2}
-  playerRadius: 0.46
+  playerRadius: 0.4
   mainCam: {fileID: 0}
   currentNode: {fileID: 0}
   isMoving: 0

@@ -16,11 +16,11 @@ MonoBehaviour:
   points:
   - {x: -3.27, y: -0.83, z: 0}
   - {x: 2.1799998, y: -1.99, z: 0}
-  startPoint: {x: 0.78612745, y: -0.31940824}
+  startPoint: {x: 1, y: -0.31940824}
   goldMoves: 7
   silverMoves: 11
   maxMoves: 15
-  revealRate: 3
-  bestRating: 3
-  bestMoves: 7
-  completed: 1
+  revealRate: 4
+  bestRating: 0
+  bestMoves: 15
+  completed: 0

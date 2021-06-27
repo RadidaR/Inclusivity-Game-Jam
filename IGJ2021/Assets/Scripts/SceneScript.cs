@@ -12,7 +12,8 @@ public class SceneScript : MonoBehaviour
 
     IEnumerator LoadSceneCoroutine(int sceneNumber)
     {
-        yield return new WaitForSecondsRealtime(0.2f);
+        FindObjectOfType<AudioManagerScript>().StopSound("TimerSound");
+        yield return new WaitForSecondsRealtime(0.35f);
         SceneManager.LoadScene(sceneNumber);
     }
 

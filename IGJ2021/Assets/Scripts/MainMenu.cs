@@ -30,6 +30,8 @@ public class MainMenu : MonoBehaviour
     {
 
         UpdateHighScores();
+
+        //FindObjectOfType<AudioManagerScript>().PlaySound("BackgroundMusic");
     }
 
     public void CheckForPreviousProgress()
