@@ -58,6 +58,19 @@ public class PlayerScript : MonoBehaviour
         }
     }
 
+    IEnumerator CheckIfReachedEnd()
+    {
+        yield return new WaitForSeconds(0.5f);
+
+        GameManager gameManager = FindObjectOfType<GameManager>();
+
+        if (gameManager.currentPoints.Count > 0)
+        {
+            FindObjectOfType<AudioManagerScript>().PlaySound("ResetSound");
+            eReset.Raise();
+        }
+    }
+
     private void Update()
     {
         //Collider2D[] nodes = Physics2D.OverlapCircleAll(transform.position, playerRadius);
@@ -78,21 +91,9 @@ public class PlayerScript : MonoBehaviour
             if (currentNode.activeNodesInReach.Count == 0 && counter == 0)
             {
                 counter++;
-                FindObjectOfType<AudioManagerScript>().PlaySound("ResetSound");
-                eReset.Raise();
+                StartCoroutine(CheckIfReachedEnd());
             }
 
-            //if (currentNode != node.gameObject.GetComponent<NodeScript>())
-            //{
-            //    currentNode.isOccupied = false;
-            //    currentNode.isActive = false;
-            //    Color alpha = gameData.inactiveNodeColor;
-            //    alpha.a = 1;
-            //    currentNode.gameObject.GetComponentInChildren<SpriteRenderer>().color = alpha;
-            //    currentNode.HidePaths();
-            //    currentNode = node.gameObject.GetComponent<NodeScript>();
-
-            //}
         }
         else
         {

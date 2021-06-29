@@ -8,6 +8,7 @@ public class LevelCreator : MonoBehaviour
     public Vector3[] points;
     public Transform playerPosition;
 
+
     private void OnValidate()
     {
         if (level != null)
@@ -33,6 +34,8 @@ public class LevelCreator : MonoBehaviour
                 points = null;
                 level.points = null;
             }
-        }
+        }  
+
+
     }
 }

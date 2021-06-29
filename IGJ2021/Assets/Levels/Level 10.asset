@@ -10,18 +10,19 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 3612cdbed48b18f499f32fa4ab8384c0, type: 3}
-  m_Name: Level 4
+  m_Name: Level 10
   m_EditorClassIdentifier: 
-  level: 4
+  level: 10
   points:
-  - {x: -0.94, y: 8.869999, z: 0}
-  - {x: 2.79, y: 3.24, z: 0}
-  - {x: 3.21, y: 8.299999, z: 0}
-  startPoint: {x: -5.1338725, y: 2.6905918}
-  goldMoves: 15
-  silverMoves: 20
-  maxMoves: 25
+  - {x: 0.95, y: 12.2, z: 0}
+  - {x: -0.98, y: 8.85, z: 0}
+  - {x: 2.81, y: 3.27, z: 0}
+  - {x: 6.92, y: 6.29, z: 0}
+  startPoint: {x: 3.02, y: 5.04}
+  goldMoves: 20
+  silverMoves: 25
+  maxMoves: 30
   revealRate: 6
   bestRating: 0
-  bestMoves: 30
+  bestMoves: 20
   completed: 0

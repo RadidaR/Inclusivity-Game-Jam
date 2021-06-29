@@ -19,9 +19,9 @@ MonoBehaviour:
   - {x: -2.84, y: 2.95, z: 0}
   startPoint: {x: -2.44, y: 4.69}
   goldMoves: 13
-  silverMoves: 16
+  silverMoves: 15
   maxMoves: 20
-  revealRate: 7
+  revealRate: 5
   bestRating: 0
   bestMoves: 20
   completed: 0
